@@ -12,7 +12,7 @@ const app = express();
 const mongoURI = process.env.DATABASE_URI;
 
 app.use(cors({
-    origin: ['http://localhost:3000','https://employment-client.vercel.app'],
+    origin: ['http://localhost:3000','https://employment-client.vercel.app/'],
     credentials: true,
 }));
 app.use(bodyParser.json());
