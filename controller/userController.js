@@ -20,11 +20,11 @@ export const login=async (req,res)=>{
       // Generate JWT token
       const token = jwt.sign({ userId: user.email }, process.env.JWT_SECRET, { expiresIn: '24h' });
       // Return success message and token
-      res.cookie('token',token,{ path:'/',domain: 'employment-client-production.up.railway.app',
+      res.cookie('token',token,{ path:'/',
       sameSite: 'none',
       secure: true,
       httpOnly: true,})
-      res.json({ message: 'Login successful',email });
+      res.json({ message: 'Login successful',email,token });
 
   
     } catch (err) {
