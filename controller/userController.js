@@ -20,7 +20,7 @@ export const login=async (req,res)=>{
       // Generate JWT token
       const token = jwt.sign({ userId: user.email }, process.env.JWT_SECRET, { expiresIn: '24h' });
       // Return success message and token
-      res.cookie('token',token,{ path:'/',sameSite: 'none', secure: true,domain:'https://employment-client.vercel.app'})
+      res.cookie('token',token,{ path:'/',sameSite: 'none', secure: true,domain:'.vercel.app'})
       res.json({ message: 'Login successful',email });
 
   
